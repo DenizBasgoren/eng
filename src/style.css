@@ -1,0 +1,79 @@
+html, body {
+	font: 14px/1.21 'Helvetica Neue', arial, sans-serif;
+	font-weight: 400;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	height: 100%;
+	overflow-y: auto;
+}
+
+html, body, div {
+	box-sizing: border-box;
+}
+
+h1 {
+	text-align: center;
+}
+
+
+.Entry {
+	padding: 20px;
+	margin: 20px;
+	/* background-color: green; */
+}
+
+.App {
+	padding: 5px;
+	min-height: 100%;
+}
+
+.light.App {
+	background-color: white;
+	color: black;
+}
+
+.dark.App {
+	background-color: #112;
+	color: white;
+}
+
+.Menu {
+	text-align: right;
+}
+
+.light .Menu {
+	background-color: aliceblue;
+}
+
+.dark .Menu {
+	background-color: #112;
+}
+
+.Menu > select {
+	margin: 5px;
+	padding: 5px;
+}
+
+.Menu > select:nth-child(1) {
+	float: left;
+}
+
+.Error {
+	position: fixed;
+	width: 90%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	margin: 10px;
+}
+
+.light .Error {
+	background-color: lightcoral;
+	/* color: darkred; */
+}
+
+.dark .Error {
+	background-color: darkred;
+	/* color: lightcoral; */
+}
