@@ -7,7 +7,7 @@ let context = createContext()
 
 // to get rid of /build/index.html, we go one back to /eng
 // from there, to get data, we go ./data/...
-// window.history.replaceState(null, '', '..')
+window.history.replaceState(null, '', '..')
 
 // debug
 window._clearLC = () => {
@@ -224,7 +224,7 @@ function Entry({original, trans}) {
 			}))
 			return
 		}
-		
+
 		let selectedVoiceId = 0
 		voices.forEach((v,i) => {
 			if (v.lang == 'en' || v.lang == 'en-US' || v.lang == 'en-GB') {
