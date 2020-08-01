@@ -29,7 +29,7 @@ function parse(s) {
 		if (i[0] == '/' && i[1] == '/') {
 			res.push([])
 		} else {
-			res[res.length-1].push(i)
+			res[res.length-1]?.push(i)
 		}
 	})
 
@@ -42,7 +42,7 @@ function parse(s) {
 function App () {
 
 	let [s,ss] = useState({
-		version: '1.01',
+		version: '1.02',
 		lang: 'rus',
 		langUpdateNeeded: false,
 		allLangs: ['rus', 'tur'],
