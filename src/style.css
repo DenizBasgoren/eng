@@ -34,7 +34,7 @@ h1 {
 }
 
 .dark.App {
-	background-color: #112;
+	background-color: rgb(24, 26, 27);
 	color: white;
 }
 
@@ -47,7 +47,7 @@ h1 {
 }
 
 .dark .Menu {
-	background-color: #112;
+	background-color: rgb(28, 31, 32);
 }
 
 .Menu > select {
@@ -76,4 +76,9 @@ h1 {
 .dark .Error {
 	background-color: darkred;
 	/* color: lightcoral; */
+}
+
+.Entry > p:nth-child(1):hover {
+	font-weight: bold;
+	cursor: pointer;
 }

@@ -5,12 +5,16 @@ import { produce } from 'immer'
 
 let context = createContext()
 
-// let urlPrefix = window.location.host.includes('github') ? 'eng' : '.'
-let urlPrefix = '..'
+// to get rid of /build/index.html, we go one back to /eng
+// from there, to get data, we go ./data/...
+// window.history.replaceState(null, '', '..')
 
-window.clearLC = () => {
+// debug
+window._clearLC = () => {
 	for (let i in window.localStorage) {
-		delete window.localStorage[i]
+		if (i.includes('EA_')) {
+			delete window.localStorage[i]
+		}
 	}
 }
 
@@ -20,6 +24,7 @@ render(<App />, document.body)
 /////////////////////
 function parse(s) {
 	let res = []
+
 	s.split('\n').filter(o => o).forEach(i => {
 		if (i[0] == '/' && i[1] == '/') {
 			res.push([])
@@ -27,7 +32,9 @@ function parse(s) {
 			res[res.length-1].push(i)
 		}
 	})
-	return res
+
+	if (!res.length) return [[]]
+	else return res
 }
 
 
@@ -35,23 +42,23 @@ function parse(s) {
 function App () {
 
 	let [s,ss] = useState({
-		version: '1',
+		version: '1.01',
 		lang: 'rus',
 		langUpdateNeeded: false,
 		allLangs: ['rus', 'tur'],
 		engData: [[]],
 		data: [[]],
-		page: +window.localStorage.page || 0,
-		darkMode: !!window.localStorage.darkMode,
+		page: +window.localStorage.EA_page || 0,
+		darkMode: !!window.localStorage.EA_darkMode,
 		error: ''
 	})
 
 	useEffect(() => {
 		if (!s.langUpdateNeeded) return
 
-		window.localStorage.lang = s.lang
-		fetch(`${urlPrefix}/data/translations/${s.lang}`).then(r => r.text()).then(res => {
-			window.localStorage.data = res
+		window.localStorage.EA_lang = s.lang
+		fetch(`data/translations/${s.lang}`).then(r => r.text()).then(res => {
+			window.localStorage.EA_data = res
 
 			ss( produce(s => {
 				s.langUpdateNeeded = false
@@ -68,20 +75,20 @@ function App () {
 	}, [s.langUpdateNeeded])
 
 	useEffect(() => {
-		if ( s.version != +window.localStorage.version || !window.localStorage.engData) {
-			window.localStorage.version = s.version
-			fetch(`${urlPrefix}/data/eng`).then(r => r.text()).then(res => {
-				window.localStorage.engData = res
+		if ( s.version != +window.localStorage.EA_version || !window.localStorage.EA_engData) {
+			window.localStorage.EA_version = s.version
+			fetch('data/eng').then(r => r.text()).then(res => {
+				window.localStorage.EA_engData = res
 	
 				let newLang
-				if (window.localStorage.lang) {
-					newLang = window.localStorage.lang
+				if (window.localStorage.EA_lang) {
+					newLang = window.localStorage.EA_lang
 				} else {
 					newLang = s.lang
-					window.localStorage.lang = newLang
+					window.localStorage.EA_lang = newLang
 				}
 
-				let dataExists = !!window.localStorage.data
+				let dataExists = !!window.localStorage.EA_data
 
 				ss( produce(s => {
 					s.engData = parse(res)
@@ -97,9 +104,9 @@ function App () {
 		}
 		else {
 			ss( produce(s => {
-				s.engData = parse(localStorage.engData)
-				s.data = parse(localStorage.data)
-				s.lang = localStorage.lang
+				s.engData = parse(localStorage.EA_engData)
+				s.data = parse(localStorage.EA_data)
+				s.lang = localStorage.EA_lang
 			}))
 		}
 
@@ -117,7 +124,7 @@ function App () {
 			<Menu />
 			{
 				s.engData[s.page]?.map((en, en_n) => {
-					return <Entry original={en} trans={s.data[s.page][en_n]} />
+					return <Entry original={en} trans={s.data[s.page]?.[en_n]} />
 				})
 			}
 			{
@@ -136,14 +143,14 @@ function Menu() {
 	let [g,gg] = useContext(context)
 
 	function pageChanged(e) {
-		window.localStorage.page = e.target.value
+		window.localStorage.EA_page = e.target.value
 		gg( produce(s => {
 			s.page = +e.target.value
 		}))
 	}
 
 	function darkChanged(e) {
-		window.localStorage.darkMode = e.target.value == 'light' ? '' : 'true'
+		window.localStorage.EA_darkMode = e.target.value == 'light' ? '' : 'true'
 		gg(produce(s => {
 			s.darkMode = e.target.value == 'dark'
 		}))
@@ -203,8 +210,37 @@ function Menu() {
 
 /////////////////////////
 function Entry({original, trans}) {
+
+	let [fast, setFast] = useState(false) // fast?
+	let [g,gg] = useContext(context)
+
+	function speak() {
+		let synth = window.speechSynthesis
+		let voices = synth.getVoices()
+
+		if (!voices.length) {
+			gg( produce(s => {
+				s.error = 'Speech not supported.'
+			}))
+			return
+		}
+		
+		let selectedVoiceId = 0
+		voices.forEach((v,i) => {
+			if (v.lang == 'en' || v.lang == 'en-US' || v.lang == 'en-GB') {
+				selectedVoiceId = i
+			}
+		})
+		let sentence = new SpeechSynthesisUtterance(original)
+		sentence.voice = voices[selectedVoiceId]
+		sentence.pitch = 1
+		sentence.rate = fast ? 1 : 0.5
+		synth.speak(sentence)
+		setFast( !fast )
+	}
+
 	return <div class='Entry'>
-		<p>{original}</p>
+		<p onClick={speak}>{original}</p>
 		<p>{trans}</p>
 	</div>
 }
