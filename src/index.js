@@ -42,7 +42,7 @@ function parse(s) {
 function App () {
 
 	let [s,ss] = useState({
-		version: '1.02',
+		version: '1.04',
 		lang: 'rus',
 		langUpdateNeeded: false,
 		allLangs: ['rus', 'tur'],
@@ -88,11 +88,9 @@ function App () {
 					window.localStorage.EA_lang = newLang
 				}
 
-				let dataExists = !!window.localStorage.EA_data
-
 				ss( produce(s => {
 					s.engData = parse(res)
-					if (!dataExists) s.langUpdateNeeded = true
+					s.langUpdateNeeded = true
 					s.lang = newLang
 				}))
 			})
@@ -143,6 +141,8 @@ function Menu() {
 	let [g,gg] = useContext(context)
 
 	function pageChanged(e) {
+		document.body.scrollTop = 0
+		document.documentElement.scrollTop = 0
 		window.localStorage.EA_page = e.target.value
 		gg( produce(s => {
 			s.page = +e.target.value

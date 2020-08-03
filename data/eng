@@ -1,10 +1,236 @@
-// Hello World
 
-This is the first sentence.
-And this be the second one.
-Quick brown fox jumped over the lazy dog.
+//1 i, you, an x
+I
+You
+We
+I and you
+You and I
+Anna
+I and Anna
+Anna and Kim
+I and you and John
+I, you and John
+A car
+A doctor
+An engineer
+An astronaut
+An artist
+A doctor and an engineer
+A doctor, an engineer and an artist
+Cars
+Doctors
+Engineers and technicians
+One driver
+Two passengers
+One driver and two passengers
+A driver and three passengers
+We and a driver
+A driver and we
+Three experts: a chemist, a physicist, and a biologist
+A smart doctor
+A smart, handsome doctor
+A smart and handsome doctor
+An honest, smart and handsome doctor
+A smart but rude doctor
+A smart but not happy doctor
+A new doctor and an old doctor
+A new and young intern
+A new and a young intern
+A new but a young intern
+A new and not a young intern
+A new but not a young intern
+A very smart kid
+A really smart kid
+A small and very smart kid
+A young but not very smart kid
+Two not very fortunate passengers
+Two unfortunate passengers
+A slightly dumb person
+A very happy but slightly dumb person
+You and a very pretty girl
+Pretty girls and a slightly dumb guy
 
-// Second chapter
 
-Now things get harder.
-Pen pineapple apple pen.
+//2 am is are
+I am a doctor.
+I am an astronaut.
+You are a student.
+You are a smart student.
+I am a good guy.
+You are a very kind person.
+We are very good friends.
+We are a very good pair.
+You are fit guys.
+A doctor is an artist.
+An engineer is a smart person.
+A good doctor is a bad driver.
+A kind person you are.
+Very experienced doctors we are.
+Matt is a good player.
+He is a good player.
+She is a pretty girl.
+She is a slightly dumb girl.
+He and she are a pair.
+They are a pair.
+You and Matt are great partners.
+You are great partners.
+They are a very happy family.
+You two are funny guys.
+You, Anna, are a genius.
+Anna, you are a nice friend.
+I and a friend are competent players.
+I am not an American, I am a Russian.
+I am not a convincing speaker.
+You are not a talkative boy.
+We are not criminals, we are innocent people.
+I'm not a talented singer.
+You're not an annoying teacher.
+I'm an introvert, and not an extrovert.
+I'm a smart guy, but not a genius.
+I'm not a genius, but a smart guy.
+I'm not a engineer, but a doctor.
+Anna is not a doctor, but she is an intern.
+Tom is not a great author, but an okay author.
+Tom is not a great author, but an okay one.
+Tom is not a great, but an okay author.
+Tom is not a great, but an okay one.
+
+
+//3 my your tom's this that it
+My car
+Your car
+Our car
+Your car
+Their car
+His car
+Her car
+Alice's car
+My friend is a good pilot.
+I and my wife are a happy couple.
+Mike is my brother.
+Tom is not my brother.
+Tom is not my brother, but Mike is.
+I'm not a successful singer, Oliver is.
+Oliver is not an author, I am.
+Who is a swimmer? Taylor is a swimmer.
+Who is a good swimmer? Taylor is.
+Who is a talented guitarist? I am not.
+This is a cat.
+This is my cat, Toby.
+My cat is a black cat.
+My mother's husband is my father.
+This is my cat's toy.
+These are my pets.
+My pets are a cat and a dog.
+Cats are my favorite animals.
+This is not a healthy cat.
+These are not your gifts.
+This is my car. It is an old car.
+This is my car. It's an old one.
+This is an odd day. It is a cold one.
+That is a bad example. This is a good one.
+That is not a bird. It is a pterodactyl.
+That's not a bird. It's a pterodactyl.
+That's not a difficult subject. Physics is.
+Those are not sheep. They are cows.
+You are an idiot and it's not my problem.
+Who is this? It is Kim.
+Who are these kids? They are my kids.
+Who are these? They're my kids.
+This is my car. It is mine.
+Your problems are yours. Mine are mine.
+Your husband is a good one. My husband is not.
+Yours is a good husband. Mine is not.
+This toy is my cat's toy. It is my cat's.
+These toys are my cat's.
+These toys are my cats'.
+This house is my family's. It is ours.
+This house is my cats' house, too.
+Kids' games are very difficult games.
+Kids' games are difficult. They are not easy.
+Today is a sunny day. It is warm.
+My car is a broken car. It is old. It's not new.
+Roses are red. Violets are blue.
+These are my students. They are smart and hardworking, and not lazy.
+This is New York. It's very crowded.
+My phone is not new. Its screen is broken.
+This book is boring, but its author is a good one.
+
+
+//4 the in on there's where's under for from, here
+The sun is a star.
+The moon is not a planet.
+The sky is blue.
+The TV is broken.
+The dish is delicious.
+These are the consequences.
+This is not a dog. That is.
+This is not the dog. That is.
+A bird is in the sky.
+The bird is in the sky.
+I am in my room.
+You are in a building.
+You are in the building.
+I am a guitarist.
+I am the guitarist of a rock band.
+I am the guitarist of the rock band.
+The birds are in the sky.
+The birds are on the tree.
+The birds are not on the ground. They are on the roof.
+A cat is on the roof.
+There is a virus in my computer.
+There is a plane in the sky. See?
+There is a spider in my room.
+There's a spider! Where? In my room.
+A spider! Where? There! On the ceiling.
+There's a spider in there.
+There's a sign on the wall.
+There's a treasure on the island.
+There are ghosts in this place.
+There are children on the trampoline!
+There are three passengers and a driver in the car.
+There's a bird in the sky. No, that's not a bird. It's a plane.
+There's a bird in the sky. No, there are no birds in the sky.
+There are no students in the classroom.
+There are no allergens in this soup.
+There is water in the glass.
+There is some water in the bottle.
+There is no water in the river, and there are no fish in the river.
+There's no water and no fish in the river.
+Where are my books? On the shelf.
+Where is my black suit? It is in the wardrobe.
+Where's my black suit? It's in the wardrobe.
+Where's my phone? There! On the floor.
+Where is your sister? She is in her room.
+Where is Annie? She's at work.
+Toby is at home, and he is tired.
+Tina is not at school, where is she? At home, she is not fine.
+It's not an easy job, but there are some advantages.
+Tom's not in his mood today.
+There is something under the sea.
+There are secrets behind the walls.
+There's an empty seat between the two gentlemen.
+Between the two gentlemen, there's an empty seat.
+There's no rain under the trees.
+Where's the bus? It's not on its time! But it's on its way.
+Mom! Where are you? On my way!
+Bob, where am I? Where are we? Shh! It's a surprise.
+Where is Jamie, in the office or not? He's not at work, he is on his break.
+Where's my boss? Who is your boss? Tim. Oh, he's on a mission.
+Isabelle, where are you? I'm here!
+Here is a small gift for you, Ken! Thanks, Mary.
+It's not for you, fool. It's for my mom.
+This guy is not from here. He is from Jamaica.
+Wow, a letter from my grandma!
+
+
+
+
+
+
+
+
+
+
+
+
