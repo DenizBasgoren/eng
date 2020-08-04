@@ -42,7 +42,7 @@ function parse(s) {
 function App () {
 
 	let [s,ss] = useState({
-		version: '1.04',
+		version: '1.05',
 		lang: 'rus',
 		langUpdateNeeded: false,
 		allLangs: ['rus', 'tur'],
@@ -171,7 +171,7 @@ function Menu() {
 					value={i.toString()}
 					selected={g.page == i ? 'selected' : null}
 					>
-						{i}
+						{i+1}
 					</option>
 				})
 			}
