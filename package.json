@@ -22,7 +22,7 @@
     "sirv-cli": "^1.0.3"
   },
   "dependencies": {
-    "immer": "^7.0.7",
+    "immer": "^8.0.1",
     "preact": "^10.1.0",
     "preact-render-to-string": "^5.1.2"
   }
